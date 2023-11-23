@@ -1,9 +1,7 @@
-const { autoDetect } = require('@serialport/bindings-cpp')
+const { SerialPort } = require('serialport')
 
 async function ListPorts () {
-  const Binding = autoDetect()
-
-  const ports = await Binding.list();
+  const ports = await SerialPort.list();
   console.log('Ports', ports);
 }
 
