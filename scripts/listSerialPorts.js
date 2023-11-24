@@ -48,7 +48,7 @@ async function TurnOff() {
   });
   // const port = await GetPort('/dev/ttyS0');
   // await Write(Buffer.from("0614000400341101005E", "hex"), port);
-  console.log(res);
+  console.log('Test', res);
 }
 
 async function IsOn() {
