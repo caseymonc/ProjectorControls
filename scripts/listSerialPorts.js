@@ -1,4 +1,5 @@
 const { SerialPort } = require('serialport')
+const serialIo = require('serial-io');
 
 const PowerOn = [0x06, 0x14, 0x00, 0x04, 0x00, 0x34, 0x11, 0x00, 0x00, 0x5D];
 const PowerOff = [0x06, 0x14, 0x00, 0x04, 0x00, 0x34, 0x11, 0x01, 0x00, 0x5E];
@@ -39,8 +40,10 @@ async function TurnOn() {
 }
 
 async function TurnOff() {
-  const port = await GetPort('/dev/ttyS0');
-  await Write(Buffer.from("0614000400341101005E", "hex"), port);
+  const res = await serialIo.send('/dev/ttyS0', Buffer.from("0614000400341101005E", "hex"))
+  // const port = await GetPort('/dev/ttyS0');
+  // await Write(Buffer.from("0614000400341101005E", "hex"), port);
+  console.log(res);
 }
 
 async function IsOn() {
