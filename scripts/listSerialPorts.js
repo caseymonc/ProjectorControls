@@ -19,7 +19,10 @@ async function GetPort(path) {
 async function TurnOn() {
   const port = await GetPort('/dev/ttyS0');
   port.write([0x06, 0x14, 0x00, 0x04, 0x00, 0x34, 0x11, 0x00, 0x00, 0x5D], undefined, (err) => {
-    console.log('Turn On');
+    console.log('Turn On', err);
+    port.drain((err) => {
+      console.log('Drain Error', err);
+    });
   });
 }
 
