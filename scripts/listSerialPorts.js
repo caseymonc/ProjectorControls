@@ -11,9 +11,9 @@ async function ListPorts () {
 
 async function GetPort(path) {
   const port = new SerialPort({ path, baudRate: 115200, autoOpen: false });
-  /* port.on('data', (data) => {
+  port.on('data', (data) => {
     console.log('On Data', data);
-  })*/
+  })
   await new Promise((resolve, reject) => {
     port.open((err) => {
       if (err) return reject(err);
@@ -38,6 +38,7 @@ async function Write(data, port) {
 async function TurnOn() {
   const port = await GetPort('/dev/ttyS0');
   await Write(PowerOn, port);
+  
 }
 
 async function TurnOff() {
