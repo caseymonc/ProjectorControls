@@ -38,12 +38,12 @@ async function Write(data, port) {
 async function TurnOn() {
   const port = await GetPort('/dev/ttyS0');
   await Write(PowerOn, port);
-  
+
 }
 
 async function TurnOff() {
   const port = await GetPort('/dev/ttyS0');
-  await Write(PowerOff, port);
+  await Write(Buffer.from("0614000400341101005E", "hex"), port);
 }
 
 async function IsOn() {
