@@ -11,7 +11,6 @@ async function ListPorts () {
 
 async function GetPort(path) {
   const port = new SerialPort({ path, baudRate: 115200, autoOpen: false });
-  parser.on('data', console.log)
   await new Promise((resolve, reject) => {
     port.open((err) => {
       if (err) return reject(err);
