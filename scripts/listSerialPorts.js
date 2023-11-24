@@ -49,6 +49,11 @@ async function IsOn() {
   console.log('Read', data);
 }
 
-TurnOn();
-// IsOn();
+if (process.argv[2] === 'on') {
+  TurnOn();
+} else if (process.argv[2] === 'off') {
+  TurnOff();
+} else if (process.argv[2] === 'isOn') {
+  IsOn();
+}
 
