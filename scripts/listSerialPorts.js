@@ -29,8 +29,8 @@ async function Write(data, port) {
       if (err) return reject(err);
       port.drain((err) => {
         if (err) return reject(err);
-        const data = port.read(1);
-        console.log('Write', data);
+        // const data = port.read(1);
+        // console.log('Write', data);
         resolve();
       });
     });
@@ -50,8 +50,8 @@ async function TurnOff() {
 async function IsOn() {
   const port = await GetPort('/dev/ttyS0');
   await Write(PowerStatus, port);
-  const data = port.read(2);
-  console.log('Read', data);
+  // const data = port.read(2);
+  // console.log('Read', data);
 }
 
 if (process.argv[2] === 'on') {
