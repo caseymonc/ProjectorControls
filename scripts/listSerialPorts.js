@@ -37,6 +37,11 @@ async function TurnOn() {
   await Write(PowerOn, port);
 }
 
+async function TurnOff() {
+  const port = await GetPort('/dev/ttyS0');
+  await Write(PowerOff, port);
+}
+
 async function IsOn() {
   const port = await GetPort('/dev/ttyS0');
   await Write(PowerStatus, port);
@@ -44,6 +49,6 @@ async function IsOn() {
   console.log('Read', data);
 }
 
-// TurnOn();
-IsOn();
+TurnOn();
+// IsOn();
 
