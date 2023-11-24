@@ -40,7 +40,7 @@ async function TurnOn() {
 }
 
 async function TurnOff() {
-  const res = await serialIo.send('/dev/ttyS0', Buffer.from("0614000400341101005E", "hex"))
+  const res = await serialIo.send('/dev/ttyS0', Buffer.from("0614000400341101005E", "hex").toString("hex").toUpperCase())
   // const port = await GetPort('/dev/ttyS0');
   // await Write(Buffer.from("0614000400341101005E", "hex"), port);
   console.log(res);
