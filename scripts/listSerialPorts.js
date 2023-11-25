@@ -49,8 +49,8 @@ async function TurnOff() {
 async function IsOn() {
   const port = await GetPort(PORT_NAME);
   await Write(PowerStatus, port);
-  // const data = port.read(2);
-  // console.log('Read', data);
+  const data = port.read(2);
+  console.log('Read', data);
 }
 
 if (process.argv[2] === 'on') {
