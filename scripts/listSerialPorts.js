@@ -64,7 +64,7 @@ if (process.argv[2] === 'on') {
   TurnOff();
 } else if (process.argv[2] === 'isOn') {
   IsOn();
-} else if (process.argv[2] === 'isOn') {
+} else if (process.argv[2] === 'list') {
   ListPorts();
 }
 
