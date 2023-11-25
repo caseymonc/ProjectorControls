@@ -1,6 +1,8 @@
 const { SerialPort } = require('serialport')
 const serialIo = require('serial-io');
 
+const PORT_NAME = "/dev/ttyAMA0";
+
 const PowerOn = [0x06, 0x14, 0x00, 0x04, 0x00, 0x34, 0x11, 0x00, 0x00, 0x5D];
 const PowerOff = [0x06, 0x14, 0x00, 0x04, 0x00, 0x34, 0x11, 0x01, 0x00, 0x5E];
 const PowerStatus = [0x07, 0x14, 0x00, 0x05, 0x00, 0x34, 0x00, 0x00, 0x11, 0x00, 0x5E];
@@ -34,18 +36,18 @@ async function Write(data, port) {
 }
 
 async function TurnOn() {
-  const port = await GetPort('/dev/ttyS0');
+  const port = await GetPort(PORT_NAME);
   await Write(PowerOn, port);
 
 }
 
 async function TurnOff() {
-  const port = await GetPort('/dev/ttyS0');
+  const port = await GetPort(PORT_NAME);
   await Write(PowerOff, port);
 }
 
 async function IsOn() {
-  const port = await GetPort('/dev/ttyS0');
+  const port = await GetPort(PORT_NAME);
   await Write(PowerStatus, port);
   // const data = port.read(2);
   // console.log('Read', data);
