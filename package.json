@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "axios": "^1.6.2",
     "next": "14.0.3",
+    "next-http-proxy-middleware": "^1.2.6",
     "react": "^18",
     "react-dom": "^18",
-    "serialport": "^12.0.0",
-    "serial-io": "^1.2.0"
+    "react-query": "^3.39.3",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "@types/node": "^20",
