@@ -1,0 +1,37 @@
+@import '/src/styles/breakpoint_constants';
+
+@mixin xs {
+  @media (max-width: #{$xs-width}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$xs-width + 1px}) and (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$sm-width + 1px}) and (max-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$md-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$sm-width + 1px}) {
+    @content;
+  }
+}

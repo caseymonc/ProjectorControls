@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  color: white;
+  h1 {
+    color: white;
+  }
+}
+
+.PowerOn {
+  border: none;
+  background-color: #3ED598;
+  width: 100%;
+  border-radius: 50px;
+
+  svg {
+    fill: white;
+    width: 50px;
+    height: 50px;
+  }
+}
